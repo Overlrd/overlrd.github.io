@@ -1,0 +1,166 @@
+:root {
+    font-size: 16px;
+}
+
+/* change scroll bar style */
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+/* scroll bar background color
+ */
+ body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #4c42d677 ;
+}
+
+
+
+#about_infos{
+    background-color: black;
+    width: 80%;
+}
+
+#about_links{
+    background-color: gray;
+    width: 20%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.profile_socials{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_socials > li > a {
+    width: 6rem;
+}
+
+.project_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.project_item{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.project_item article{
+    width: 20rem;
+    border-radius: 1rem;
+    justify-content: center;
+    text-align: center;
+    transition: 1s;
+}
+
+.project_item article:hover {
+    transform: scale(1.2);
+    z-index: 2;
+    transition: 1s;
+}
+.project_img{
+    min-width: 100%;
+    min-height: 100%;
+    flex-shrink: 0;
+}
+
+
+.project_article_footer{
+    background-color: transparent;
+    border-top: 1px solid black;
+}
+
+.loading {
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: black;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: opacity 0.75s, visibility 0.75s;
+
+}
+
+.loading-hidden{
+    display: none;
+    opacity: 0;
+
+}
+
+
+.project_article_header{
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.project_github_link{
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    display: flex;
+    background-color: #1e1e24;
+    transition: 500ms;
+
+    
+}
+
+.project_github_link:hover{
+    background-color: #4c42d677;
+
+}
+.project_github_logo{
+    width: 3rem;
+}
+
+
+.skills_container {
+    height: 15rem;
+    background-color: gray;
+    display: flex;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.toolkit_container {
+    width: 60%;
+    background-color: aliceblue;
+}
+
+
+
+@keyframes slide {
+    0% {
+        background-color: red;
+    }
+    100%{
+        background-color: transparent;
+    }
+}
+
+#about_infos{
+    justify-content: center;
+    text-align: center;
+    line-height: 1rem;
+    padding-top: 1rem;
+    animation: slide 1s;
+}
