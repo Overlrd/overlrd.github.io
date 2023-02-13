@@ -17,11 +17,16 @@ body::-webkit-scrollbar-thumb {
     background: #4c42d677 ;
 }
 
-
+::selection {
+    background: #0080FF;
+    text-shadow: none;
+  }
 
 #about_infos{
     background-color: black;
     width: 80%;
+    line-height: 1rem;
+    display: block!important;
 }
 
 #about_links{
@@ -30,7 +35,6 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     justify-content: center;
     align-items: center;
-
 }
 
 .profile_socials{
@@ -44,17 +48,23 @@ body::-webkit-scrollbar-thumb {
     width: 6rem;
 }
 
+
 .project_container{
     display: flex;
     align-items: center;
     justify-content: center;
     height: fit-content;
+    text-align: center;
 }
 
 .project_item{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    transition: 1s;
+    text-align: center;
+    justify-content: center;
+    margin: 1rem;
 }
 
 .project_item article{
@@ -66,7 +76,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .project_item article:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     z-index: 2;
     transition: 1s;
 }
@@ -147,20 +157,87 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-
-@keyframes slide {
-    0% {
-        background-color: red;
-    }
-    100%{
-        background-color: transparent;
-    }
-}
-
 #about_infos{
     justify-content: center;
     text-align: center;
     line-height: 1rem;
     padding-top: 1rem;
-    animation: slide 1s;
+}
+
+.blinker {
+    opacity: 1;
+    margin-bottom: -2px;
+    height: 15px;
+    margin-left: -5px;
+    border-left: 7px solid white;
+    animation: blinker 0.9s steps(2, start) infinite;
+  }
+  
+  @keyframes blinker {
+    to { 
+      visibility: hidden; 
+    }
+  }
+
+  /* =========== MIDDLE SCREEN MEDIA  QUERIES ============*/
+
+  @media screen and (max-width: 1025px) {
+    .project_item{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+}
+
+  /* =========== SMALL SCREEN MEDIA  QUERIES ============*/
+
+@media screen and (max-width: 650px) {
+    .project_item{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #about_links{
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 2rem;
+        border-radius: 1rem;
+    }
+
+    #about_infos{
+        width: 100%;
+    }
+    #about_infos > p {
+        margin: 1rem;
+    }
+
+    .profile_socials{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .profile_socials > li {
+    }
+    #fork_on_github{
+        display: none;
+    }
+    .project_item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .project_item article{
+        width: 100%;
+
+    }
+
 }
