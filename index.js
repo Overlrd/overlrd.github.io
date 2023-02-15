@@ -1,4 +1,4 @@
-import { GetWolfs } from "./firebase.js";
+import { GetWolfs, GetGoose } from "./firebase.js";
 //const getwolfs = getDocs(collection(db, 'infos'))
 
 window.addEventListener('load',  async(e) =>  {
@@ -10,8 +10,16 @@ window.addEventListener('load',  async(e) =>  {
   let Infoarr = [] 
   const QuerySnapshot = await GetWolfs();
   QuerySnapshot.forEach((doc) => {
-      console.log(doc.data());
+      //console.log(doc.data());
       Infoarr.push({...doc.data()})
+      
+  })
+
+  let certarr = [] 
+  const QuerySnapshot_again = await GetGoose();
+  QuerySnapshot_again.forEach((doc) => {
+      console.log(doc.data());
+      certarr.push({...doc.data()})
       
   })
 
@@ -65,28 +73,4 @@ window.addEventListener('load',  async(e) =>  {
   loader.addEventListener('transitionend', () => {
     document.body.removeChild('loading')
   })
-
 })
-
-document.addEventListener('DOMContentLoaded', async(e) => {
-
-})
-
-
-
-
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });

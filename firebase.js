@@ -19,3 +19,7 @@ const db = getFirestore(app)
 export const GetWolfs = () => {
     return getDocs(collection(db, "infos"))
 };
+
+export const GetGoose = () => {
+  return getDocs(collection(db, "certifications"))
+}

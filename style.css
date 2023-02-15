@@ -142,21 +142,6 @@ body::-webkit-scrollbar-thumb {
     width: 3rem;
 }
 
-
-.skills_container {
-    height: 15rem;
-    background-color: gray;
-    display: flex;
-    width: 100%;
-    margin-top: 2rem;
-}
-
-.toolkit_container {
-    width: 60%;
-    background-color: aliceblue;
-}
-
-
 #about_infos{
     justify-content: center;
     text-align: center;
@@ -178,6 +163,65 @@ body::-webkit-scrollbar-thumb {
       visibility: hidden; 
     }
   }
+
+/* ============= SKIlls ========= */
+
+.skills_container {
+    display: flex;
+    width: 100%;
+    margin-top: 5rem;
+    justify-content: center;
+    text-align: center;
+}
+
+kbd{
+    background-color: #11191F;
+    color: white;
+    border: solid 0.5px #2f2b5f77 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    width: 100%;
+    font-size: 1rem;
+}
+kbd:hover{
+    background-color: black;
+    transition: 500ms;
+}
+kbd img{
+    margin: 0 1rem;
+}
+
+kbd div {
+    display: flex;
+    justify-content: left;
+    margin-top: 1rem;
+    align-items: center;
+}
+kbd div:hover{
+    background-color: #4c42d677;
+}
+
+.certification_container {
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* =========== MIDDLE SCREEN MEDIA  QUERIES ============*/
 
