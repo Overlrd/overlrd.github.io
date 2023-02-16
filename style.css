@@ -170,6 +170,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     width: 100%;
     margin-top: 5rem;
+    margin-bottom: 5rem;
     justify-content: center;
     text-align: center;
 }
@@ -209,24 +210,47 @@ kbd div:hover{
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.certification{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: solid 0.5px #2f2b5f77 ;
+    margin: 1rem;
+}
+.certification img{
+    width: 30px;
+}
+.certification a {
+    text-decoration: none;
+}
+.certification:hover{
+    background-color: black;
+    transition: 500ms;
+}
+.certification_click{
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.stuff_coded{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
 
   /* =========== MIDDLE SCREEN MEDIA  QUERIES ============*/
 
   @media screen and (max-width: 1025px) {
     .project_item{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+
+    .skills_container{
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
     }
@@ -253,6 +277,7 @@ kbd div:hover{
         width: 100%;
         margin-top: 2rem;
         border-radius: 1rem;
+        margin-bottom: 2rem;
     }
 
     #about_infos{
@@ -284,4 +309,11 @@ kbd div:hover{
 
     }
 
+    .skills_container{
+        display: flex;
+        flex-direction: column;
+    }
+
 }
+
+

@@ -5,6 +5,7 @@ window.addEventListener('load',  async(e) =>  {
   const loader = document.querySelector('.loading')
   const project_view = document.querySelector('.project_item')
   const links_view = document.querySelector('profile_socials')
+  const certs_view = document.getElementById('certifications_grid')
 
 
   let Infoarr = [] 
@@ -22,7 +23,7 @@ window.addEventListener('load',  async(e) =>  {
       certarr.push({...doc.data()})
       
   })
-
+// feed projects 
   project_view.innerHTML = ''
 
   for (const item of Infoarr) {
@@ -53,17 +54,42 @@ window.addEventListener('load',  async(e) =>  {
     project_view.classList.add("slided")
   }
 
+  // feed Certs
+  certs_view.innerHTML = ''
+  for (const cert_item of certarr) {
+    // create a new cert div
+    let new_div = document.createElement('kbd')
+    new_div.className += "certification"
+
+    // load image
+    let img = new Image()
+    img.src = cert_item['avatar'] // i dont know why i choose this name XD
+    
+    // load cert name
+    let name = document.createElement('kbd')
+    name.className+= "certification_click"
+    let name_with_link = `<a target="_blank" href="${cert_item['review']}" >${cert_item['name']}</a>`
+    name.innerHTML = name_with_link
+       
+    // add all this stuff 
+    new_div.append(name)
+    new_div.append(img)
+    certs_view.append(new_div)
+
+  } 
+
+
   // Typing animation for my name
-  var txt =  document.getElementById("infos_name").dataset.content
+  var txt =  document.querySelector(".infos_name").dataset.content
   var i = 0
   var speed = 100
   function typeWriter() {
     if (i < txt.length) {
-      document.getElementById("infos_name").innerHTML += `${txt.charAt(i)}`;
+      document.querySelector(".infos_name").innerHTML += `${txt.charAt(i)}`;
       i++;
       setTimeout(typeWriter, speed);
       if (i == txt.length){
-        document.getElementById("infos_name").innerHTML += `&nbsp; <span class='blinker'>&#32;</span>`
+        document.querySelector(".infos_name").innerHTML += `&nbsp; <span class='blinker'>&#32;</span>`
       }
     }
   }
