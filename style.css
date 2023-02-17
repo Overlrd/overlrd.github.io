@@ -27,6 +27,13 @@ body::-webkit-scrollbar-thumb {
     width: 80%;
     line-height: 1rem;
     display: block!important;
+    justify-content: center;
+    text-align: center;
+    line-height: 1rem;
+}
+
+.infos_name{
+    margin-top: 1rem;
 }
 
 #about_links{
@@ -60,11 +67,10 @@ body::-webkit-scrollbar-thumb {
 .project_item{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
     transition: 1s;
     text-align: center;
     justify-content: center;
-    margin: 1rem;
 }
 
 .project_item article{
@@ -142,12 +148,7 @@ body::-webkit-scrollbar-thumb {
     width: 3rem;
 }
 
-#about_infos{
-    justify-content: center;
-    text-align: center;
-    line-height: 1rem;
-    padding-top: 1rem;
-}
+
 
 .blinker {
     opacity: 1;
@@ -169,8 +170,6 @@ body::-webkit-scrollbar-thumb {
 .skills_container {
     display: flex;
     width: 100%;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
     justify-content: center;
     text-align: center;
 }
@@ -204,7 +203,6 @@ kbd div:hover{
 }
 
 .certification_container {
-    margin-top: 5rem;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -238,7 +236,45 @@ kbd div:hover{
     justify-content: center;
     text-align: center;
     width: 100%;
-    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+/* Footer */
+
+.footer{
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_music{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer_music img{
+    width: auto;
+}
+
+.footer_footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    background-color: black;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.reserved{
+    font-size: 10px;
+}
+
+/*Now the funniest part */
+#easter_egg{
+    display: none;
 }
 
   /* =========== MIDDLE SCREEN MEDIA  QUERIES ============*/

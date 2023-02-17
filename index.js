@@ -100,3 +100,14 @@ window.addEventListener('load',  async(e) =>  {
     document.body.removeChild('loading')
   })
 })
+
+document.addEventListener("DOMContentLoaded", function () {
+  //
+  let trigger = document.getElementById('audio_trigger')
+  trigger.addEventListener('click', function(){
+    let audio = document.getElementById('easter_egg')
+    audio.style.display = "block"
+    audio.currentTime = 0;
+    audio.play()
+  })
+})

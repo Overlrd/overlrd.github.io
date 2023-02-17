@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/275fc2985a.js" crossorigin="anonymous"></script>
     <!-- Custom css -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
 
     <!-- Fork me on github -->
     <title>Augustin's Website</title>
@@ -19,7 +19,7 @@
 </head>
   <body>
     
-    <main  class="container">
+    <main  class="container" style="padding: 0!important; margin-top: 2rem;">
 
       <div  aria-busy="true" class="loading">
       </div>
@@ -33,7 +33,7 @@
             
         </div>
         <div id="about_links">
-            <h1>Contact</h1>
+            <h1>Say Hello</h1>
             <ul class="profile_socials">
                 <li><a href="https://www.linkedin.com/in/augustin-kpadonou-590aa5227" target="_blank" role="button"><i class="fa-brands fa-linkedin-in"></i></a></li>
                 <li><a href="mailto:premieraugust28@gmail.com" role="button"><i class="fa-solid fa-envelope"></i> </a></li>
@@ -69,6 +69,11 @@
         <div>
           <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
           Javascript 
+        </div>
+
+        <div>
+          <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" />
+          Bash
         </div>
         
 
@@ -176,12 +181,30 @@
       </div>
     </div>
 
-    <div class="container footer">
+    <h1> <p class="stuff_coded">Listening to ...&nbsp; <span class=''>&#x1F3B5;</span></p> </h1>
 
+    <div class="container footer">
+      <div class="footer_music kbd">
+        <a target="_blank" href="https://open.spotify.com/user/314v7s32prl5rereab23odp3ehnq">
+          <img src="https://now-playing-spotify-2-d1i8giuwo-overlrd.vercel.app/api/spotify-playing"alt="recently listened on spotify">
+        </a>
+      </div>
+
+      <div class="footer_footer">
+        <p class="coded_with">Coded with <i class="fa-solid fa-mug-hot"></i> and <i id="audio_trigger" class="fa-solid fa-headphones"></i> ..</p>
+        <p class="reserved">2023 - Not Reserved XD</p>
+        <audio id="easter_egg" controls>
+          <source src="https://444nuits.com/files/1/Skyclub-Diabi-Rmx.mp3" type="audio/mp3" />
+          <p>
+            Your browser doesn't support this audio file. Here is a
+            <a href="viper.mp3">link to the audio</a> instead.
+          </p>
+        </audio>
+        
+      </div>
     </div>
 
   <script type="module" src="index.js"></script>
   <script type="module" src="firebase.js"></script>
-  <script type="module" src="skills.js"></script>
   </body>
 </html>
