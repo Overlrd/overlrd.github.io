@@ -1,6 +1,3 @@
-import { GetWolfs, GetGoose } from "./firebase.js";
-//const getwolfs = getDocs(collection(db, 'infos'))
-
 window.addEventListener('load',  async(e) =>  {
   const loader = document.querySelector('.loading')
   const project_view = document.querySelector('.project_item')
@@ -9,20 +6,41 @@ window.addEventListener('load',  async(e) =>  {
 
 
   let Infoarr = [] 
-  const QuerySnapshot = await GetWolfs();
-  QuerySnapshot.forEach((doc) => {
-      //console.log(doc.data());
-      Infoarr.push({...doc.data()})
-      
-  })
 
   let certarr = [] 
-  const QuerySnapshot_again = await GetGoose();
-  QuerySnapshot_again.forEach((doc) => {
-      console.log(doc.data());
-      certarr.push({...doc.data()})
-      
-  })
+
+  const res_cert = await fetch('https://fire-server.vercel.app/certification', {
+    method: "GET"
+  });
+  
+  if (res_cert.ok) {
+    const data = await res_cert.json();
+    data.forEach((doc) =>{
+      certarr.push({...doc})
+    } )
+  
+    console.log(data);
+  } else {
+    console.error('Error:', res_cert.status);
+  }
+  
+
+  const res_projects = await fetch('https://fire-server.vercel.app/projects', {
+    method: "GET"
+  });
+  
+  if (res_projects.ok) {
+    const data = await res_projects.json();
+    data.forEach((doc) =>{
+      Infoarr.push({...doc})
+    } )
+  
+    console.log(data);
+  } else {
+    console.error('Error:', res_projects.status);
+  }
+  
+
 // feed projects 
   project_view.innerHTML = ''
 
@@ -104,10 +122,16 @@ window.addEventListener('load',  async(e) =>  {
 document.addEventListener("DOMContentLoaded", function () {
   //
   let trigger = document.getElementById('audio_trigger')
+  let audio = document.getElementById('easter_egg')
+
+  let clickCount = 0;
   trigger.addEventListener('click', function(){
-    let audio = document.getElementById('easter_egg')
-    audio.style.display = "block"
-    audio.currentTime = 0;
-    audio.play()
+    clickCount++;
+    if(clickCount === 4){
+      audio.style.display = "block"
+      audio.currentTime = 0;
+      audio.play()
+    }
+
   })
 })
