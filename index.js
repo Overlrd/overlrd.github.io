@@ -9,6 +9,8 @@ window.addEventListener('load',  async(e) =>  {
 
   let certarr = [] 
 
+  // FireServer Hrer //
+
   const res_cert = await fetch('https://fire-server.vercel.app/certification', {
     method: "GET"
   });
@@ -19,7 +21,6 @@ window.addEventListener('load',  async(e) =>  {
       certarr.push({...doc})
     } )
   
-    console.log(data);
   } else {
     console.error('Error:', res_cert.status);
   }
@@ -35,7 +36,6 @@ window.addEventListener('load',  async(e) =>  {
       Infoarr.push({...doc})
     } )
   
-    console.log(data);
   } else {
     console.error('Error:', res_projects.status);
   }
