@@ -33,7 +33,7 @@
             
         </div>
         <div id="about_links">
-            <h1>Say Hello</h1>
+            <h2>Stay in touch !</h2>
             <ul class="profile_socials">
                 <li><a href="https://www.linkedin.com/in/augustin-kpadonou-590aa5227" target="_blank" role="button"><i class="fa-brands fa-linkedin-in"></i></a></li>
                 <li><a href="mailto:premieraugust28@gmail.com" role="button"><i class="fa-solid fa-envelope"></i> </a></li>
@@ -44,7 +44,7 @@
     </main>
 
 
-    <h1> <p class="stuff_coded">Projects &nbsp; <span class='blinker'>&#32;</span></p> </h1>
+    <h1 id="projects-section"> <p class="stuff_coded">Projects &nbsp; <span class='blinker'>&#32;</span></p> </h1>
 
     <div class="container project_container ">
 
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <h1> <p class="stuff_coded">Toolkit &nbsp; <span class='blinker'>&#32;</span></p> </h1>
+    <h1 id="toolkit-section"> <p class="stuff_coded">Toolkit &nbsp; <span class='blinker'>&#32;</span></p> </h1>
 
     <div class="container skills_container">
 
@@ -157,42 +157,40 @@
      
     </div>
 
-    <h1> <p class="stuff_coded">Certifications &nbsp; <span class='blinker'>&#32;</span></p> </h1>
+    <h1 id="certification-section"> <p class="stuff_coded">Certifications &nbsp; <span class='blinker'>&#32;</span></p> </h1>
 
     <div class="container certification_container">
       <div id="certifications_grid" class="grid">
-        <div class="certification">
-          <p>Google Data Analytics Professional Certificate</p>
-          <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" />
-
-        </div>
-
-        <div class="certification">
-          <p>Oracle</p>
-          <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" />
-
-        </div>
-
-        <div class="certification">
-          <p>Udemy</p>
-          <img width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" />
-
-        </div>
       </div>
     </div>
 
-    <h1> <p class="stuff_coded">Listening to ...&nbsp; <span class=''>&#x1F3B5;</span></p> </h1>
+    <h1> <p class="stuff_coded">Text Me ! &nbsp; <span class='blinker'>&#32;</span></p> </h1>
+
+    <div class="container" id="contact_form">
+      <form aria-required="true"
+        action="https://formspree.io/f/xyyawaoo"
+        method="POST"
+        >
+        <label>
+          Your email:
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Your message:
+          <textarea required name="message"></textarea>
+        </label>
+        <!-- your other form fields go here -->
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+
 
     <div class="container footer">
-      <div class="footer_music kbd">
-        <a target="_blank" href="https://open.spotify.com/user/314v7s32prl5rereab23odp3ehnq">
-          <img src="https://now-playing-spotify-2-d1i8giuwo-overlrd.vercel.app/api/spotify-playing"alt="recently listened on spotify">
-        </a>
-      </div>
 
       <div class="footer_footer">
+        
         <p class="coded_with">Coded with <i class="fa-solid fa-mug-hot"></i> and <i id="audio_trigger" class="fa-solid fa-headphones"></i> ..</p>
-        <p class="reserved">2023 - Not Reserved XD</p>
         <audio id="easter_egg" controls>
           <source src="https://444nuits.com/files/1/Skyclub-Diabi-Rmx.mp3" type="audio/mp3" />
           <p>
@@ -200,9 +198,22 @@
             <a href="https://444nuits.com/files/1/Skyclub-Diabi-Rmx.mp3">link to the audio</a> instead.
           </p>
         </audio>
-        
       </div>
     </div>
+
+
+
+          <!-- Navbar ??? -->
+
+    <nav id="floating-nav" class="navbar-fade">
+      <a href="#about_infos" class="link-scroll" data-tooltip="About me"><i class="fa-solid fa-user"></i></a>
+      <a href="#projects-section" class="link-scroll" data-tooltip="My Projects"><i class="fa-solid fa-code"></i></a>
+      <a href="#toolkit-section" class="link-scroll" data-tooltip="My Toolkit"><i class="fa-solid fa-toolbox"></i></a>
+      <a href="#certification-section" class="link-scroll" data-tooltip="My Certifications"><i class="fa-solid fa-certificate"></i></a>
+      <a href="#contact_form" class="link-scroll" data-tooltip="Text Me !"><i class="fa-solid fa-paper-plane"></i></a>
+   
+    </nav>
+
 
   <script type="module" src="index.js"></script>
   </body>

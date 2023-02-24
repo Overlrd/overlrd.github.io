@@ -1,5 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     font-size: 16px;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* change scroll bar style */
@@ -86,6 +92,8 @@ body::-webkit-scrollbar-thumb {
     z-index: 2;
     transition: 1s;
 }
+
+
 .project_img{
     min-width: 100%;
     min-height: 100%;
@@ -240,6 +248,14 @@ kbd div:hover{
     margin-bottom: 5rem;
 }
 
+.cert_description{
+    margin-top: 2rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* Footer */
 
 .footer{
@@ -272,10 +288,67 @@ kbd div:hover{
     font-size: 10px;
 }
 
+
+/*Floating navbar*/
+/*Floating navbar*/
+#floating-nav{ 
+    position: fixed;
+    bottom: 3rem;
+    width: 20rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4c42d677;
+    border-radius: 3rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 3;
+
+}
+
+#floating-nav > a {
+    border-radius: 1rem;
+}
+#floating-nav > a:hover{
+    background: #8984c777;
+}
+
+.link-scroll {
+    scroll-behavior: smooth;
+}
+
+.navbar-fade {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+#floating-nav > a > i {
+    color: white;
+}
+  
 /*Now the funniest part */
 #easter_egg{
     display: none;
 }
+
+
+
+
+/*CONTACT DIV*/
+
+#contact_form{
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+
+}
+#contact_form > form > button {
+    margin: auto;
+    width: 30%;
+}
+
 
   /* =========== MIDDLE SCREEN MEDIA  QUERIES ============*/
 
@@ -349,6 +422,12 @@ kbd div:hover{
         display: flex;
         flex-direction: column;
     }
+    .project_item article:hover {
+        transform: scale(1);
+        z-index: 2;
+        transition: 1s;
+    }
+    
 
 }
 

@@ -40,7 +40,6 @@ window.addEventListener('load',  async(e) =>  {
     console.error('Error:', res_projects.status);
   }
   
-
 // feed projects 
   project_view.innerHTML = ''
 
@@ -88,13 +87,29 @@ window.addEventListener('load',  async(e) =>  {
     name.className+= "certification_click"
     let name_with_link = `<a target="_blank" href="${cert_item['review']}" >${cert_item['name']}</a>`
     name.innerHTML = name_with_link
-       
+
     // add all this stuff 
     new_div.append(name)
     new_div.append(img)
+
+
+    for( const skill of cert_item['skills_learned']){
+      let description = document.createElement('div')
+      description.className = "cert_description"
+      description.innerHTML = skill
+      new_div.append(description)
+
+    }
+
     certs_view.append(new_div)
 
   } 
+// log it
+console.log("  dP88    dP88    dP88          88b 88 88   88 88 888888 .dP\"Y8 ");
+console.log(" dP 88   dP 88   dP 88          88Yb88 88   88 88   88   `Ybo.\" ");
+console.log("d888888 d888888 d888888         88 Y88 Y8   8P 88   88     `Y8b ");
+console.log("    88      88      88          88  Y8 `YbodP' 88   88   8bodP' ");
+
 
 
   // Typing animation for my name
@@ -135,3 +150,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   })
 })
+
