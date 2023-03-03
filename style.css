@@ -1,3 +1,4 @@
+
 html {
     scroll-behavior: smooth;
 }
@@ -7,6 +8,7 @@ html {
     overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* change scroll bar style */
 body::-webkit-scrollbar {
@@ -276,6 +278,9 @@ kbd div:hover{
 
 .footer_footer{
     display: flex;
+    width: 100%;
+    min-height: 5rem;
+
     flex-direction: column;
     margin-top: 2rem;
     background-color: black;
@@ -293,7 +298,7 @@ kbd div:hover{
 /*Floating navbar*/
 #floating-nav{ 
     position: fixed;
-    bottom: 3rem;
+    bottom: 0rem;
     width: 20rem;
     left: 50%;
     transform: translateX(-50%);
@@ -306,9 +311,13 @@ kbd div:hover{
     align-items: center;
     padding: 1rem;
     z-index: 3;
+    transition: 300ms;
+    opacity: 0.5;
 
 }
-
+#floating-nav:hover{
+    opacity: 1;
+}
 #floating-nav > a {
     border-radius: 1rem;
 }
