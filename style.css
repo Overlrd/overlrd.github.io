@@ -281,7 +281,6 @@ kbd div:hover{
     display: flex;
     width: 100%;
     min-height: 5rem;
-
     flex-direction: column;
     margin-top: 2rem;
     background-color: black;
@@ -436,6 +435,11 @@ kbd div:hover{
         transform: scale(1);
         z-index: 2;
         transition: 1s;
+    }
+
+    #floating-nav {
+        position: relative;
+        display: none;
     }
     
 

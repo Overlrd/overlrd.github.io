@@ -143,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
   trigger.addEventListener('click', function(){
     clickCount++;
     if(clickCount === 4){
-      audio.style.display = "block"
       audio.currentTime = 0;
       audio.play()
     }
