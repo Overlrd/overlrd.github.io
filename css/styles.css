@@ -1,0 +1,84 @@
+@import url('./pico.min.css');
+body {
+    text-align: center;
+    justify-content: space-evenly;
+}
+div {
+    text-align: center;
+    justify-content: center;
+}
+main {
+    display: flex;
+    flex-direction: column;
+}
+.stats{
+    text-align: end;
+}
+.stack{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+select {
+    margin: none!important;
+    height: 3rem;
+}
+select option {
+    width: 3Opx!important;
+    height: 10px!important;
+    background: #1a1b27;
+}
+.projects-list{
+    margin-top: 1rem;
+}
+.projects-list div{
+    margin-top: 1rem;
+}
+.project{
+    border-radius: 10px;
+    text-align: start;
+    align-items: start;
+    padding: 1rem;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    color: #50bdae;
+    border: solid 1px #e4e2e2;
+    transition: 200ms;
+    animation: progressive_opacity 1s ;
+}
+@keyframes progressive_opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.project .title {
+    color: #71a4fb;
+}
+.project .dot {
+    color: #3572a5;
+    margin-right: 1rem;
+}
+.project-link{
+    list-style: none;
+    text-decoration: none;
+}
+.project:hover {
+    transition: 300ms;
+    background: #1a1b27;
+}
+.presentation span {
+    text-decoration: underline;
+    font-size: larger;
+    color: white;
+}
+.footer {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    align-items: flex-end;
+}
