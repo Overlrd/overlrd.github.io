@@ -87,11 +87,7 @@ select option {
 
 .footer {
     display: flex;
-    flex-direction: row; /* Change flex-direction to "row" */
-    justify-content: flex-end; /* Change align-items to "justify-content" */
-    align-items: center; /* Add align-items property to vertically center the content */
+    flex-direction: column;
     text-align: end;
-}
-.footer a{
-    margin: 1rem;
+    align-items: flex-end;
 }
