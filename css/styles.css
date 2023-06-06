@@ -71,11 +71,20 @@ select option {
     transition: 300ms;
     background: #1a1b27;
 }
+
+.presentation {
+    text-align: start;
+    white-space: nowrap;
+}
+
 .presentation span {
     text-decoration: underline;
     font-size: larger;
     color: white;
+    display: inline-block;
+    min-width: 0;
 }
+
 .footer {
     display: flex;
     flex-direction: row; /* Change flex-direction to "row" */
