@@ -1,53 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" as="image" href="https://github-readme-stats.vercel.app/api?username=Overlrd&show_icons=true&theme=tokyonight&rank_icon=github" />
+    <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-    <title>Overlrd - Home</title>
 </head>
-<style>
-    body{ min-height: 100vh; margin:0; }
-</style>
 <body>
-    <nav class="container">
-        <ul>
-          <li><a href="./work.html">My Work</a></li>
-          <li><a target="_blank" href="https://github.com/Overlrd">My Github</a></li>
-        </ul>
-    </nav>
+    <main class="container">
+        <article class="header flex-row">
 
-    <div class="container" style="display:flex; flex-direction:column;">
- 
-        <article>
-            <p class="presentation">
-                Hello, I'm <span>Augustin</span>, also known as Overlrd. <br>
-                I am 19 years old and i <span>love building things</span>. <br>
-                Currently, I am <span>learning programming</span>  to transform some vague <span>ideas</span> into <span>useful programs</span>. <br>
-                In addition, I thoroughly enjoy listening to <span>music</span>  while building them.
-            </p>
+            <div>
+                Hi, I'm Augustin, and I'm learning Computer Science.
+                <br>
+                Check out my work on <a href="https://github.com/Overlrd/">github</a>!
+                <br>
+                Feel free to <a href="mailto:premieraugust28@gmail.com">email me</a>.
+              </div>
+              
         </article>
 
-        <div align="center">
-            <h3>Currently listening</h3>
-            <img src="https://now-playing-spotify-2-d1i8giuwo-overlrd.vercel.app/api/spotify-playing" width="100%" />
+        <div class="stats flex-row">
+            <div class="gh-stats">
+                <div class="gh-stats-1">
+                    <img class="blue-border" src="https://github-readme-stats-overlrd.vercel.app/api?username=Overlrd&show_icons=true&theme=tokyonight&rank_icon=github"/>
+                </div>
+                <div class="gh-stats-2 flex-row">
+                    <img class="blue-border" src="https://github-readme-stats-overlrd.vercel.app/api/top-langs/?username=overlrd&size_weight=0.5&count_weight=0.5&layout=donut&theme=tokyonight"/>
+                    <div>
+                        <!-- Select -->
+                        <select id="sort_by">
+                            <option value="">Sort By</option>
+                            <option value="updated">Updated</option>
+                            <option value="created">Created</option>
+                            <option value="pushed">Pushed</option>
+                            <option value="full_name">Full name</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="projectlist" class="projects-list container flex-column">
+            
         </div>
 
-        <div align="center" style="text-align: start; margin-top:2%">
-            <p>The best thing i ever read <a href="https://pastebin.com/zZrdRrNA">https://pastebin.com/zZrdRrNA</a> <br>
-            <small>(Big Magic - Elisabeth Gilbert)</small>
-            </p>
         </div>
-        <div align="center" style="text-align: start;">
-            <p> <a href="mailto:premieraugust28@gmail.com">Mail me !</a> </p>
-        </div>
-    </div>
-    <div class="footer container">
-            <a href="https://github.com/overlrd">Github</a>
-            <a target="_blank" href="mailto:premieraugust28@gmail.com">Mail</a>
-    </div>
+    </main>
+    <script src="./js/index.js"></script>
 </body>
 </html>
