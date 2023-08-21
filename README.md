@@ -1,3 +1,3 @@
 # My website
 
-I really like minimalist and simple designs. I try to find a compromise between simplicity, comfort, and efficiency.
+Single page website , built with [PicoCss](https://picocss.com/).
