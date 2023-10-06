@@ -1,33 +1,51 @@
+// Function to fetch GitHub repo data
 async function getGithubApiData(sort) {
-        const response = await fetch(`https://api.github.com/users/overlrd/repos?sort=${sort}&per_page=10`
-);
-        const jsonData = await response.json();
-        return jsonData
-      }
+  const url = `https://api.github.com/users/overlrd/repos?sort=${sort}&per_page=10`;
+  
+  // Check if data exists in local storage
+  const cachedData = localStorage.getItem(url);
+  if (cachedData) {
+    return JSON.parse(cachedData);
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const ProjectList = document.getElementById('projects');
-  ProjectList.innerHTML = ''
+  try {
+    const response = await fetch(url);
+    const jsonData = await response.json();
 
-  getGithubApiData("updated").then((github_data) => {
-    for (const repo of github_data) {
-      const { name: repo_name,
-        description: repo_description,
-        language: repo_language,
-        html_url: html_link } = repo;
-        
-        let new_item = document.createElement('li')
-        let new_link = document.createElement('a')
-        let new_p = document.createElement('p')
+    // Store data in local storage
+    localStorage.setItem(url, JSON.stringify(jsonData));
 
-        new_link.href = html_link
-        new_link.innerText = `${repo_name}`
-        let lang_text = `language: ${repo_language}`
-        new_p.innerText = `${repo_description} - ${repo_language !== null ? lang_text : ''}`
+    return jsonData;
+  } catch (error) {
+    console.error('Error fetching GitHub data:', error);
+    return [];
+  }
+}
 
-        new_item.appendChild(new_link)
-        new_item.appendChild(new_p)
-        ProjectList.appendChild(new_item)
+document.addEventListener('DOMContentLoaded', async () => {
+  const projectList = document.getElementById('projects');
+  projectList.innerHTML = '';
+
+  try {
+    const githubData = await getGithubApiData('updated');
+    
+    for (const repo of githubData) {
+      const { name: repoName, description: repoDescription, language: repoLanguage, html_url: htmlLink } = repo;
+
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      const paragraph = document.createElement('p');
+
+      link.href = htmlLink;
+      link.innerText = repoName;
+      const langText = repoLanguage ? `language: ${repoLanguage}` : '';
+      paragraph.innerText = `${repoDescription} - ${langText}`;
+
+      listItem.appendChild(link);
+      listItem.appendChild(paragraph);
+      projectList.appendChild(listItem);
     }
-  })
-})
+  } catch (error) {
+    console.error('Error rendering GitHub data:', error);
+  }
+});
