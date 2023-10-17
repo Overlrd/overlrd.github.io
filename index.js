@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   projectList.innerHTML = '';
 
   try {
-    const githubData = await getGithubApiData('updated');
+    const githubData = await getGithubApiData('created');
     
     for (const repo of githubData) {
       const { name: repoName, description: repoDescription, language: repoLanguage, html_url: htmlLink } = repo;
