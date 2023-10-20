@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Augustin's website</title>
-    <link rel="preload" as="font" type="font/ttf" href="JetBrainsMono-Regular.ttf" crossorigin/>
+    <link rel="preload" as="font" type="font/ttf" href="JetBrainsMono-Regular.ttf" crossorigin="anonymous" />
 </head>
+
 <body>
     <style>
-        @import 'JetBrainsMono-Regular.ttf';
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('JetBrainsMono-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         @import 'pico.slim.min.css';
 
-        root {
+        body {
             font-family: 'JetBrains Mono', monospace;
         }
     </style>
     <main class="container">
         <header>
-                <p>Hi I'm Augustin, I'm learning Computer Science</p>
-                <p>And I'm also enrolled in a Social Science Degree at University.</p>
-                <p>Check my work <a target="_blank" href="https://github.com/Overlrd">here !</a> </p>
-                <p>Email me <a href="mailto:premieraugust28@gmail.com">here !</a> </p>
+            <p>Hi I'm Augustin, I'm learning Computer Science</p>
+            <p>And I'm also enrolled in a Social Science Degree at University.</p>
+            <p>Check my work on <a target="_blank" href="https://github.com/Overlrd">github !</a> </p>
+            <p>Email me <a href="mailto:premieraugust28@gmail.com">here !</a> </p>
         </header>
         <section>
             <h4>Some Projects of mine :</h4>
@@ -28,8 +36,9 @@
                 <ul id="projects"></ul>
             </div>
         </section>
-        
+
     </main>
     <script src="./index.js" defer></script>
 </body>
+
 </html>
