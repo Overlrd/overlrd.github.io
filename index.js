@@ -1,4 +1,6 @@
 // Function to fetch GitHub repo data
+const SORT_BY = "updated";
+
 async function getGithubApiData(sort) {
   const url = `https://api.github.com/users/overlrd/repos?sort=${sort}&per_page=10`;
   
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   projectList.innerHTML = '';
 
   try {
-    const githubData = await getGithubApiData('created');
+    const githubData = await getGithubApiData(SORT_BY);
     
     for (const repo of githubData) {
       const { name: repoName, description: repoDescription, language: repoLanguage, html_url: htmlLink } = repo;
