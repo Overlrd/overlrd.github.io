@@ -21,6 +21,7 @@ async function getData(sort) {
     localStorage.setItem(url, JSON.stringify(jsonData));
 
     return jsonData;
+    console.log(jsonData);
   } catch (error) {
     console.error('Error fetching GitHub data:', error);
     return [];
