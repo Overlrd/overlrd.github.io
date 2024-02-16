@@ -1,7 +1,7 @@
 // https://overlrd.github.io/ 
 
 
-const SORT_BY = "updated";
+const ORDER = "updated";
 
 // Function to fetch GitHub repo data
 async function getData(sort) {
@@ -10,9 +10,10 @@ async function getData(sort) {
   // Check if data exists in local storage
   const cachedData = localStorage.getItem(url);
   if (cachedData) {
-    return JSON.parse(cachedData);
+    return JSON.parse(cachedData); // and return if yes
   }
 
+  // else
   try {
     const response = await fetch(url);
     const jsonData = await response.json();
@@ -28,12 +29,13 @@ async function getData(sort) {
   }
 }
 
+	
 document.addEventListener('DOMContentLoaded', async () => {
   const projectList = document.getElementById('projects');
   projectList.innerHTML = '';
 
   try {
-    const githubData = await getData(SORT_BY);
+    const githubData = await getData(ORDER);
     
     for (const repo of githubData) {
       const { name: repoName, description: repoDescription, language: repoLanguage, html_url: htmlLink } = repo;
